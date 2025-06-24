@@ -5,6 +5,7 @@
             flex-direction: column;
         }
     </style>
+    @if (Auth::check())
     <h1>Création d'une note</h1>
     <form action="{{route('note.store')}}" method="POST">
         @csrf
@@ -16,4 +17,7 @@
 
         <button type="submit">Créé</button>
     </form>
+    @else
+    <h1>Pour créé une note connectez vous</h1>
+    @endif
 </x-layout>
